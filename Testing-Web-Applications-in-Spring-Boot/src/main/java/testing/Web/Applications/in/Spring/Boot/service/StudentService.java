@@ -1,6 +1,6 @@
-package service;
+package testing.Web.Applications.in.Spring.Boot.service;
 
-import model.Student;
+import testing.Web.Applications.in.Spring.Boot.model.Student;
 
 import java.util.Collection;
 

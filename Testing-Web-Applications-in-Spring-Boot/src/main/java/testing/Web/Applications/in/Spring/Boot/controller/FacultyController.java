@@ -1,10 +1,10 @@
-package controller;
+package testing.Web.Applications.in.Spring.Boot.controller;
 
-import model.Faculty;
+import testing.Web.Applications.in.Spring.Boot.model.Faculty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.FacultyService;
+import testing.Web.Applications.in.Spring.Boot.service.FacultyService;
 
 @RequestMapping("/faculty")
 @RestController
@@ -31,8 +31,9 @@ public class FacultyController {
         return ResponseEntity.ok(faculty);
     }
 
-    @PutMapping()
-    public ResponseEntity<Faculty> updateFaculty(@RequestBody Faculty faculty) {
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Faculty> updateFaculty(@PathVariable Long id, @RequestBody Faculty faculty) {
         Faculty updatedFaculty = facultyService.updateFaculty(faculty);
         if (updatedFaculty == null) {
             return ResponseEntity.notFound().build();

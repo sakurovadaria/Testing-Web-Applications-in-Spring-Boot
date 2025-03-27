@@ -1,9 +1,9 @@
-package service;
+package testing.Web.Applications.in.Spring.Boot.service;
 
-import exception.StudentNotFoundException;
-import model.Student;
+import testing.Web.Applications.in.Spring.Boot.exception.StudentNotFoundException;
+import testing.Web.Applications.in.Spring.Boot.model.Student;
 import org.springframework.stereotype.Service;
-import repository.StudentRepository;
+import testing.Web.Applications.in.Spring.Boot.repository.StudentRepository;
 
 import java.util.Collection;
 
@@ -29,8 +29,15 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student updateStudent(Long id, Student student) {
-        return studentRepository.save(student);
+        Student existingStudent = studentRepository.findById(id)
+                .orElseThrow(() -> new StudentNotFoundException("Студент не найден"));
+
+        existingStudent.setAge(student.getAge());
+        existingStudent.setName(student.getName());
+
+        return studentRepository.save(existingStudent);
     }
+
 
     @Override
     public void removeStudent(Long id) {

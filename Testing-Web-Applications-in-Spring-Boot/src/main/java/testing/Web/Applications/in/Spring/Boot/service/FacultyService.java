@@ -1,6 +1,6 @@
-package service;
+package testing.Web.Applications.in.Spring.Boot.service;
 
-import model.Faculty;
+import testing.Web.Applications.in.Spring.Boot.model.Faculty;
 
 public interface FacultyService {
     Faculty getFaculty(Long id);

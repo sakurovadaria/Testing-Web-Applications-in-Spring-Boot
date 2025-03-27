@@ -1,4 +1,4 @@
-package model;
+package testing.Web.Applications.in.Spring.Boot.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,12 +21,11 @@ public class Faculty {
     @OneToMany
     private List<Student> students;
 
-    public Faculty() {
 
+    public Faculty() {
     }
 
-    public Faculty(long id, String name, String color) {
-        this.id = id;
+    public Faculty(String name, String color) {
         this.name = name;
         this.color = color;
     }

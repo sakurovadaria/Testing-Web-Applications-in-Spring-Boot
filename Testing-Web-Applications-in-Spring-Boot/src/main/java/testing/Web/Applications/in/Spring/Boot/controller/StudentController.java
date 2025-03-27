@@ -1,10 +1,10 @@
-package controller;
+package testing.Web.Applications.in.Spring.Boot.controller;
 
-import model.Student;
+import testing.Web.Applications.in.Spring.Boot.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.StudentService;
+import testing.Web.Applications.in.Spring.Boot.service.StudentService;
 
 import java.util.Collection;
 
@@ -33,8 +33,8 @@ public class StudentController {
         return ResponseEntity.ok(student);
     }
 
-    @PutMapping()
-    public ResponseEntity<Student> updateStudent(@RequestBody Long id, @RequestBody Student student) {
+    @PutMapping("/{id}")
+    public ResponseEntity<Student> updateStudent(@PathVariable Long id, @RequestBody Student student) {
         Student updatedStudent = studentService.updateStudent(id, student);
         if (updatedStudent == null) {
             return ResponseEntity.notFound().build();
