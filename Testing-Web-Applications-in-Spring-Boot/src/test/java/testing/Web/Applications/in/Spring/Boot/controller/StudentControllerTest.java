@@ -10,7 +10,6 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import testing.Web.Applications.in.Spring.Boot.exception.StudentNotFoundException;
-import testing.Web.Applications.in.Spring.Boot.model.Faculty;
 import testing.Web.Applications.in.Spring.Boot.model.Student;
 import testing.Web.Applications.in.Spring.Boot.service.StudentService;
 
@@ -21,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(testing.Web.Applications.in.Spring.Boot.controller.StudentControllerTest.class)
+@WebMvcTest(StudentController.class)
 public class StudentControllerTest {
     @Autowired
     private MockMvc mockMvc;
