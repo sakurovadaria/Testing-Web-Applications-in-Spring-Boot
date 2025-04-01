@@ -1,9 +1,9 @@
-package service;
+package testing.Web.Applications.in.Spring.Boot.service;
 
-import exception.StudentNotFoundException;
-import model.Faculty;
+import testing.Web.Applications.in.Spring.Boot.exception.StudentNotFoundException;
+import testing.Web.Applications.in.Spring.Boot.model.Faculty;
 import org.springframework.stereotype.Service;
-import repository.FacultyRepository;
+import testing.Web.Applications.in.Spring.Boot.repository.FacultyRepository;
 
 @Service
 public class FacultyServiceImpl implements FacultyService{

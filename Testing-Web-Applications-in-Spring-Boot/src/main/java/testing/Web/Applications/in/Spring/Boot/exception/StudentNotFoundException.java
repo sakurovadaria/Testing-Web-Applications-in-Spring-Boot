@@ -1,4 +1,4 @@
-package exception;
+package testing.Web.Applications.in.Spring.Boot.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

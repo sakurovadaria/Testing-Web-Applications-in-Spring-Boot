@@ -1,4 +1,4 @@
-package model;
+package testing.Web.Applications.in.Spring.Boot.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,14 +19,11 @@ public class Student {
     @ManyToOne
     private Faculty faculty;
 
+    @ManyToOne
+    private Avatar avatar;
+
     public Student(){
 
-    }
-
-    public Student(int id, int age, String name) {
-        this.id = id;
-        this.age = age;
-        this.name = name;
     }
 
     public Student(int age, String name) {
