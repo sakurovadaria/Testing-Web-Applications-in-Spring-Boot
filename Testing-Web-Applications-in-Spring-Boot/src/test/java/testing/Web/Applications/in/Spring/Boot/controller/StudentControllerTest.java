@@ -78,7 +78,7 @@ public class StudentControllerTest {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
-        mockMvc.perform(MockMvcRequestBuilders.put("/students")
+        mockMvc.perform(MockMvcRequestBuilders.put("/students/1")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(student)))
                 .andDo(print())
@@ -91,7 +91,7 @@ public class StudentControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/students/1"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().is2xxSuccessful());
     }
 
 

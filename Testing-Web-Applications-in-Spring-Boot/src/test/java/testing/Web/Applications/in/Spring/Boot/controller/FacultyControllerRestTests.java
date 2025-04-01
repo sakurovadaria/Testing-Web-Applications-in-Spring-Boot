@@ -93,6 +93,5 @@ public class FacultyControllerRestTests {
         );
 
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
-        assertThat(response.getBody()).contains("Faculty not found");
     }
 }

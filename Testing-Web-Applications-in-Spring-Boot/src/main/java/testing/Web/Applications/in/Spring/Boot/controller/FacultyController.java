@@ -34,12 +34,14 @@ public class FacultyController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Faculty> updateFaculty(@PathVariable Long id, @RequestBody Faculty faculty) {
+        faculty.setId(id);
         Faculty updatedFaculty = facultyService.updateFaculty(faculty);
         if (updatedFaculty == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(updatedFaculty);
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> removeFaculty(@PathVariable Long id) {

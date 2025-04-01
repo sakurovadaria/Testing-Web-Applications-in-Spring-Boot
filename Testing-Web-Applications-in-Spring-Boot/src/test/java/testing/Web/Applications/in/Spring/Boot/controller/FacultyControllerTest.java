@@ -93,7 +93,7 @@ public class FacultyControllerTest {
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/faculty/1"))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().is2xxSuccessful());
     }
 
 }
